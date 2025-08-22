@@ -45,7 +45,7 @@ Enter choice: )";
             }
             else if (choice == 1) {
                 Dice dice(1, 6, 0);
-                ASCIIDice anim("frames.js");
+                ASCIIDice anim("data//frames.txt");
                 anim.animateWithInverse(2500, 15); 
                 dice.rolld6();
                 waitForEnter();
@@ -71,7 +71,7 @@ Please Enter Your Roll: )";
                 Dice dice = Dice::parseToDice(input);
                 if (choice == 2) {
                     if (dice.getNumDice() == 1 && dice.getSize() == 6 && dice.getModifier() == 0) {
-                        ASCIIDice anim("frames.js");
+                        ASCIIDice anim("data//frames.txt");
                         anim.animateWithInverse(2500, 15);
                     }
                     dice.roll();
