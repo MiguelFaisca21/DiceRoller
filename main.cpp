@@ -8,6 +8,10 @@
 
 using namespace std;
 
+string filepath = "data//frames.txt";
+int animationDuration = 2500;
+int animationFPS = 15;
+
 int safeReadInt(int defaultValue) {
     int value;
     if (!(cin >> value)) {
@@ -45,8 +49,8 @@ Enter choice: )";
             }
             else if (choice == 1) {
                 Dice dice(1, 6, 0);
-                ASCIIDice anim("data//frames.txt");
-                anim.animateWithInverse(2500, 15); 
+                ASCIIDice anim(filepath);
+                anim.animateWithInverse(animationDuration, animationFPS);
                 dice.rolld6();
                 waitForEnter();
             }
@@ -71,8 +75,8 @@ Please Enter Your Roll: )";
                 Dice dice = Dice::parseToDice(input);
                 if (choice == 2) {
                     if (dice.getNumDice() == 1 && dice.getSize() == 6 && dice.getModifier() == 0) {
-                        ASCIIDice anim("data//frames.txt");
-                        anim.animateWithInverse(2500, 15);
+                        ASCIIDice anim(filepath);
+                        anim.animateWithInverse(animationDuration, animationFPS);
                     }
                     dice.roll();
                 } else if (choice == 3) {
